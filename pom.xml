@@ -12,10 +12,12 @@
         <java.version>17</java.version>
         <java.encoding>UTF-8</java.encoding>
         <version.dep.junit>5.9.1</version.dep.junit>
+        <version.dep.slf4j>2.0.4</version.dep.slf4j>
         <version.dep.maven-plugin>4.0.0-alpha-2</version.dep.maven-plugin>
         <version.dep.maven-plugin-annotations>3.7.0</version.dep.maven-plugin-annotations>
         <version.plugin.maven-surefile>3.0.0-M7</version.plugin.maven-surefile>
         <version.plugin.maven-enforcer>3.1.0</version.plugin.maven-enforcer>
+        <version.plugin.maven-plugin>3.6.2</version.plugin.maven-plugin>
         <version.plugin.maven-enforcer.dep.rules>1.6.1</version.plugin.maven-enforcer.dep.rules>
     </properties>
 
@@ -23,6 +25,14 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
@@ -40,6 +50,16 @@
                 <artifactId>junit-jupiter-api</artifactId>
                 <version>${version.dep.junit}</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${version.dep.slf4j}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${version.dep.slf4j}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven</groupId>
@@ -95,6 +115,11 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${version.plugin.maven-surefile}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-plugin-plugin</artifactId>
+                    <version>${version.plugin.maven-plugin}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
