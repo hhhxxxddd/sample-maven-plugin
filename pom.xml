@@ -96,16 +96,24 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <fail>false</fail>
                     <rules>
                         <banDuplicateClasses>
                             <ignoreClasses>
                                 <ignoreClass>org.codehaus.plexus.*</ignoreClass>
                             </ignoreClasses>
                             <findAllDuplicates>true</findAllDuplicates>
-                            <ignoreWhenIdentical>true</ignoreWhenIdentical>
+                            <ignoreWhenIdentical>false</ignoreWhenIdentical>
+                            <message>存在重复类</message>
                         </banDuplicateClasses>
+                        <bannedDependencies>
+                            <excludes>
+                                <exclude>org.apache:libthrift</exclude>
+                            </excludes>
+                            <searchTransitive>true</searchTransitive>
+                            <message>存在规则之外的依赖</message>
+                        </bannedDependencies>
                     </rules>
-                    <fail>true</fail>
                 </configuration>
             </plugin>
         </plugins>
